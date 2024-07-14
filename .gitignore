@@ -8,6 +8,4 @@
 
 # editors
 .idea
-.project
-.settings/
 .vscode/
