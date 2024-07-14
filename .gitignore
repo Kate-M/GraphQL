@@ -1,0 +1,13 @@
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+.env
+.gitconfig
+
+# editors
+.idea
+.project
+.settings/
+.vscode/
