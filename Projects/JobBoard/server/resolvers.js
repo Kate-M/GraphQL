@@ -5,6 +5,7 @@ import {
   getJobsByCompany,
   createJob,
   deleteJob,
+  updateJob,
 } from './db/jobs.js';
 
 export const resolvers = {
@@ -43,6 +44,10 @@ export const resolvers = {
     },
 
     deleteJob: (_root,  { input: { id } }) => deleteJob(id),
+
+    updateJob: (_root, { input: { id, title, description } }) => {
+      return updateJob({ id, title, description });
+    },
   },
 };
 
