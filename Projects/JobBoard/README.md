@@ -6,9 +6,14 @@ It uses Apollo Server with Express, and GraphQL-Request and Apollo Client as Gra
 
 # Set up
 Server: 
--npm install
--npm start
+- npm install
+- npm start
 
 Client: 
--npm install
--npm start
+- npm install
+- npm start
+
+# Scripts
+Server:
+## Reset DB
+- node scripts/create-db.js 

@@ -1,5 +1,5 @@
 import { getCompany } from './db/companies.js';
-import { getJob, getJobs, getJobsByCompany } from './db/jobs.js';
+import { getJob, getJobs, getJobsByCompany, createJob } from './db/jobs.js';
 
 export const resolvers = {
   Query: {
@@ -27,6 +27,13 @@ export const resolvers = {
 
   Company: {
     jobs: (company) => getJobsByCompany(company.id),
+  },
+
+  Mutation: {
+    createJob: (_root, { input: { title, description } }) => {
+      const companyId = 'FjcJCHJALA4i'; // TODO set based on user
+      return createJob({ companyId, title, description });
+    },
   },
 };
 
