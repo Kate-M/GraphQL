@@ -1,5 +1,11 @@
 import { getCompany } from './db/companies.js';
-import { getJob, getJobs, getJobsByCompany, createJob } from './db/jobs.js';
+import { 
+  getJob,
+  getJobs,
+  getJobsByCompany,
+  createJob,
+  deleteJob,
+} from './db/jobs.js';
 
 export const resolvers = {
   Query: {
@@ -22,6 +28,7 @@ export const resolvers = {
   
   Job: {
     company: (job) => getCompany(job.companyId),
+  
     date: (job) => toIsoDate(job.createdAt),
   },
 
@@ -34,6 +41,8 @@ export const resolvers = {
       const companyId = 'FjcJCHJALA4i'; // TODO set based on user
       return createJob({ companyId, title, description });
     },
+
+    deleteJob: (_root,  { input: { id } }) => deleteJob(id),
   },
 };
 
