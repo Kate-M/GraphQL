@@ -15,5 +15,6 @@ Client:
 
 # Scripts
 Server:
+
 -Reset DB
 - node scripts/create-db.js 
